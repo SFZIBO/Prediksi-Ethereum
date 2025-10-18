@@ -1,6 +1,7 @@
-Flask==3.0.3
-gunicorn==22.0.0
-tensorflow==2.16.1
-pandas==2.2.2
-numpy==1.26.4
-scikit-learn==1.5.0
+Flask
+gunicorn
+tensorflow
+pandas
+numpy
+
+scikit-learn
