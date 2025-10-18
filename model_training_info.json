@@ -1,0 +1,12 @@
+{
+    "model_name": "Ethereum_Price_LSTM_Prediction",
+    "target_feature": "price",
+    "timesteps": 60,
+    "epochs": 25,
+    "batch_size": 32,
+    "train_size": 2930,
+    "test_size": 733,
+    "rmse": 144.15520087312512,
+    "mse": 20780.721938771057,
+    "architecture": "None"
+}

@@ -1,0 +1,35 @@
+
+===========================
+LAPORAN HASIL PELATIHAN MODEL
+===========================
+
+**Judul Proyek**: Peramalan Harga Penutupan Harian Ethereum (ETH-USD) Menggunakan LSTM
+
+**Dataset**: eth-usd-max.csv
+**Kolom Target**: price
+**Total Data**: 3723
+**Data Latih**: 2930
+**Data Uji**: 733
+
+**Parameter Model**:
+- Timesteps: 60
+- Epochs: 25
+- Batch Size: 32
+- Arsitektur: 
+    - Layer 1: LSTM (50 unit, return_sequences=True)
+    - Dropout: 0.2
+    - Layer 2: LSTM (50 unit, return_sequences=False)
+    - Dropout: 0.2
+    - Dense: 25 unit
+    - Output: 1 unit
+
+**Hasil Evaluasi**:
+- Nilai Root Mean Squared Error (RMSE): $144.16
+
+**Kesimpulan**:
+Model LSTM ini berhasil mempelajari pola umum dari pergerakan harga Ethereum. 
+Grafik menunjukkan bahwa prediksi model (merah) secara umum mengikuti tren harga aktual (biru), 
+meskipun masih ada ketidaksesuaian pada titik-titik volatilitas yang tinggi. 
+Dengan RMSE sebesar $144.16, model ini dapat dianggap sebagai baseline yang cukup baik 
+untuk prediksi harga harian, terutama mengingat volatilitas pasar kripto yang sangat tinggi.
+Performa model dapat ditingkatkan melalui tuning parameter, penambahan fitur, atau penggunaan arsitektur yang lebih kompleks.

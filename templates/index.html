@@ -1,0 +1,45 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereum Price Prediction - Input Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediksi Harga Ethereum (ETH)</h1>
+
+        <div class="input-section">
+            <form method="POST">
+                <label for="prices">Masukkan 60 Harga Historis ETH (dipisahkan koma, spasi, atau baris baru):</label>
+                <textarea id="prices" name="prices" placeholder="Contoh: 2000.5, 2010.2, 1995.8, ...">{{ input_prices_str }}</textarea>
+                <button type="submit" class="btn">Prediksi Harga Berikutnya</button>
+            </form>
+        </div>
+
+        {% if error_message %}
+            <div class="error-message">{{ error_message }}</div>
+        {% endif %}
+
+        {% if predicted_price is not none %}
+            <div class="result-box">
+                <h2>Prediksi Harga ETH (USD)</h2>
+                <div class="predicted-price">${{ "%.2f"|format(predicted_price) }}</div>
+            </div>
+        {% endif %}
+
+        <div class="model-info">
+            <h3>Informasi Model</h3>
+            <p><strong>Nama Model:</strong> {{ model_name }}</p>
+            <p><strong>Root Mean Squared Error (RMSE):</strong> ${{ "%.2f"|format(rmse) }}</p>
+            <p><strong>Mean Squared Error (MSE):</strong> ${{ "%.2f"|format(mse) }}</p>
+            <p><strong>Langkah Waktu (Timesteps):</strong> {{ timesteps }}</p>
+        </div>
+    </div>
+    <footer>
+        <p>Dibuat dengan Cinta menggunakan Flask dan LSTM</p>
+    </footer>
+</body>
+</html>
