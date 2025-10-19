@@ -1,6 +1,23 @@
+# Web Framework
 Flask==3.0.3
 gunicorn==22.0.0
-tensorflow==2.20.0
-pandas>=2.0.0
-numpy>=2.1.0  # Atau numpy>=1.26.4,<3.0.0
-scikit-learn==1.5.0
+
+# Machine Learning & Data Processing
+# Tensorflow dan dependensinya
+tensorflow==2.15.0 # Versi stabil yang lebih lama, sering digunakan untuk produksi
+# Catatan: Versi TensorFlow yang lebih baru mungkin memerlukan numpy yang lebih tinggi
+
+# Data Manipulation
+pandas==2.1.4 # Versi stabil yang diketahui bekerja dengan baik
+
+# Core Libraries (sesuaikan dengan kebutuhan tensorflow)
+numpy==1.24.3 # Versi yang sering digunakan dengan tensorflow 2.15.0 dan scikit-learn lama
+# Jika tensorflow 2.15.0 tetap menyebabkan masalah, coba numpy yang lebih baru tapi tetap stabil, misalnya 1.26.4
+
+# Machine Learning (pastikan kompatibel dengan numpy dan tensorflow)
+scikit-learn==1.3.2 # Versi yang stabil dan sering digunakan
+
+# Catatan Penting:
+# - Versi-versi ini ditujukan untuk Python 3.11 atau 3.12.
+# - Jika Anda menggunakan Python 3.13, Anda mungkin perlu mencari versi yang lebih baru atau menghadapi tantangan kompatibilitas.
+# - Jika tensorflow==2.15.0 masih menyebabkan konflik dengan numpy yang dipilih, Anda mungkin perlu mencoba versi tensorflow yang lebih tua lagi (seperti 2.14.x) atau numpy yang lebih baru (misalnya 1.26.4) dan menguji kompatibilitasnya.
